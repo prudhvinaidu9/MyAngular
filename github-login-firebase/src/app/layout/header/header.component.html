@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" [routerLink]=" ['/'] ">
+    <img src="../../../assets/img.png" width="30" height="30" alt="">
+    LCO GitHub Finder App
+    </a>
+
+    <div class="navbar-collapse">
+        <div class="navbar-nav ml-auto">
+           <div *ngIf="email" class="navbar-text float-left">
+               {{email}}
+           </div>
+           <a class="nav-item nav-link" [routerLink]="['/']">Home</a>
+           <a 
+            *ngIf="!email"
+            class="nav-item nav-link" 
+            routerLinkActive="active"
+            [routerLink]="['/signin']"
+            >Signin</a>
+           <a 
+            *ngIf="!email"
+            class="nav-item nav-link" 
+            routerLinkActive="active"
+            [routerLink]="['/signup']"
+            >Signup</a>
+           <a *ngIf="email" class="nav-item nav-link" (click)="handleSignOut()">Logout</a>
+        </div>
+    </div>
+
+</nav>
