@@ -1,2 +1,2 @@
 # MyAngular
-Basic/Mini Projects
+10 Basic/Mini Projects
