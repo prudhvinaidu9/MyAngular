@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img
+        src="../../../assets/img.png"
+        width="30"
+        height="30"
+        class="d-inline-block align-top"
+        alt=""
+      />
+        Travelgram
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <!-- if the user is present then printing email -->
+        <div *ngIf="email" class="navbar-text float-left">
+          {{ email }}
+        </div>
+        <a
+          [routerLink]="['/']"
+          class="nav-item nav-link"
+          >Home</a
+        >
+        <!-- conditionally rendering links  -->
+        <a *ngIf="!email" routerLinkActive="active" [routerLink]="['/signin']" class="nav-item nav-link"
+          >Sign In</a
+        >
+        <a *ngIf="!email" routerLinkActive="active" [routerLink]="['/signup']" class="nav-item nav-link"
+          >Sign Up</a
+        >
+  
+        <a
+          *ngIf="email"
+          (click)="handleSignOut()"
+          class="nav-item nav-link text-warning"
+          >Log Out</a
+        >
+  
+        <a
+          *ngIf="email"
+          [routerLink]="['/addpost']"
+          class="nav-item nav-link btn btn-warning text-primary"
+        >
+          Post Your Story</a
+        >
+      </div>
+    </div>
+  </nav>
+  

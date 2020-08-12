@@ -1,0 +1,11 @@
+.horizontal-display {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+  }
+  img {
+    height: 80px;
+    width: 80px;
+    margin-right: 4px;
+  }
+  
